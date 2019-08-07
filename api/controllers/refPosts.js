@@ -2,7 +2,7 @@ const RefPost = require('../models/refPost')
 const mongoose = require('mongoose')
 
 exports.refPosts_get_all = (req, res) => {
-  return RefPost.find()
+   RefPost.find()
     .select('refCode refType user _id')
     .exec()
     .then(docs => {
@@ -42,7 +42,7 @@ exports.refPosts_post_refPost = (req, res) => {
     refType: req.body.refType,
     user: req.body.user
   })
-  return refPost
+   refPost
     .save()
     .then(result => {
       res.status(201).json({
@@ -66,7 +66,7 @@ exports.refPosts_post_refPost = (req, res) => {
 
 exports.refPosts_delete_refPost = (req, res) => {
   const id = req.params.refPostId
-  return RefPost.deleteOne({
+   RefPost.deleteOne({
     _id: id
   }).exec()
   .then(result => {
