@@ -1,0 +1,6 @@
+{
+  "env": {
+    "MONGO_ATLAS_PW": "oicu812!MongoDB",
+    "JWT_KEY": "secret"
+  }
+}
